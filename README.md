@@ -1,4 +1,4 @@
-School:         Irvine Valley College
-Course:         CS 37 
-Project number: 4
+School:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Irvine Valley College \
+Course:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CS 37 \
+Project number:&nbsp;4 \
 
