@@ -21,7 +21,7 @@ public:
 
     void receipt() const;       //will output the details of the order 
     float VIPdiscount() const;  //will return the discount amount of the order if VIP
-    void addFood(string Name, int sides = 0, bool soup = false);    //will update the order balance based on the input drink name and boba and the number of drinks 
+    void addFood(string foodName, int sides = 0, bool soup = false);    //will update the order balance based on the input food name and the number of sides and if they want soup
 };
 
 

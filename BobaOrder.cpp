@@ -6,9 +6,9 @@
 using namespace std;
 
 //constructor for class BobaOrder
-BobaOrder::BobaOrder(string name, string date, string phone, float miles, string sName)
+BobaOrder::BobaOrder(string name, string date, string phone, float miles, string shopName)
           :DeliveryOrder(name, date, phone, miles){
-    this->shopName = sName;
+    this->shopName = shopName;
     this->drinksCount = 0;
 }
 

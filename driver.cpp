@@ -31,6 +31,7 @@ int main(){
 
     DeliveryOrder* deliveryOPointter;   //pointer for each order 
 
+
     //==Kevin Order==//
     cout << "Kevin placing order.\n";
     BobaOrder MTeaOrder("Kevin", "11/20/2022", "123-456-0000", 10.4, "M Tea");
@@ -38,8 +39,26 @@ int main(){
     //adding drinks 
     try{
         MTeaOrder.addDrink("Green Tea Latte"); 
+    }
+    catch(InvalidInput& error){
+        error.print_reason();
+        cout << "Not serving requested drinks. Drink order ignored.\n\n";
+    }
+    try{
         MTeaOrder.addDrink("Brown Sugar Pearl Milk", false);
+    }
+    catch(InvalidInput& error){
+        error.print_reason();
+        cout << "Not serving requested drinks. Drink order ignored.\n\n";
+    }
+    try{
         MTeaOrder.addDrink("Brown Sugar Boba Milk", false, 2);
+    }
+    catch(InvalidInput& error){
+        error.print_reason();
+        cout << "Not serving requested drinks. Drink order ignored.\n\n";
+    }
+    try{
         MTeaOrder.addDrink("Iron Goddess");
     }
     catch(InvalidInput& error){
@@ -54,6 +73,7 @@ int main(){
     deliveryOPointter = &MTeaOrder;
     cout << "Discounted Balance: $" << applyDiscount(deliveryOPointter, Kevin) << "\n\n\n";
     
+
     //==Stuart order==//
     cout << "Stuart placing order.\n";
     FoodOrder TGreenOrder("Stuart", "11/20/2022", "123-456-1111", 25.5, "Tavern Green");
@@ -61,7 +81,19 @@ int main(){
     //adding food 
     try{
         TGreenOrder.addFood("Thick Cauliflower Steaks", 1, true);
+    }
+    catch(InvalidInput& error){
+        error.print_reason();
+        cout << "Not serving requested food. Food order ignored.\n\n";
+    }
+    try{
         TGreenOrder.addFood("Organic Scottish Salmon");
+    }
+    catch(InvalidInput& error){
+        error.print_reason();
+        cout << "Not serving requested food. Food order ignored.\n\n";
+    }
+    try{
         TGreenOrder.addFood("Rack of Lamb", 0, true);
     }
     catch(InvalidInput& error){
@@ -75,6 +107,7 @@ int main(){
     deliveryOPointter = &TGreenOrder;
     cout << "Discounted Balance: $" << applyDiscount(deliveryOPointter, Stuart) << "\n\n\n";   
 
+
     //==Bob order==//
     cout << "Bob decided to log in to his account and see whether he can afford ordering the same order as Stuart.\n";
 
@@ -86,10 +119,9 @@ int main(){
 
     cout << "Bob upset, cancelling order :(\n\n";
 
+
     //==final output==//
     cout << "Total order placed: " << DeliveryOrder::getOrderCount() << ".\n\n";
-
-
 }
 
 //will return the total cost of the order with the discounts applied 

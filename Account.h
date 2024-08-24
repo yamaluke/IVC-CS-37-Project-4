@@ -11,7 +11,7 @@ using namespace std;
 class Account{
 private:
     string username;       //username of user
-    string status;         //account status of user
+    string status;         //account status of user (Regular, Owner, VIP)
 
 public:
     Account(string username, string status = "Regular");    //constructor for class

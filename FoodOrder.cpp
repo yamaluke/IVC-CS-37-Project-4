@@ -29,19 +29,19 @@ float FoodOrder::VIPdiscount() const{
 }
 
 //will update the order balance based on the input drink name and boba and the number of drinks 
-void FoodOrder::addFood(string food, int sides, bool soup){
+void FoodOrder::addFood(string foodName, int sides, bool soup){
     float cost;
 
-    if(food == "Thick Cauliflower Steaks"){
+    if(foodName == "Thick Cauliflower Steaks"){
         cost = 15;
-    }else if(food == "Rack of Lamb"){
+    }else if(foodName == "Rack of Lamb"){
         cost = 38;
-    }else if(food == "Organic Scottish Salmon"){
+    }else if(foodName == "Organic Scottish Salmon"){
         cost = 23;
-    }else if(food == "Grilled Lobster Risotto"){
+    }else if(foodName == "Grilled Lobster Risotto"){
         cost = 46;
     }else{
-        throw InvalidInput(food);
+        throw InvalidInput(foodName);
     }
 
     cost += sides * 6;
